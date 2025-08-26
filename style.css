@@ -7,8 +7,8 @@ body {
 }
 
 header {
-  background-color: #2a2c39; 
-  color: #BDC3C7; 
+  background-color: #4452ad; 
+  color: #88c3eb; 
   font-family: Arial, sans-serif; 
   text-align: center; 
   height: 100px; 
@@ -54,7 +54,7 @@ header {
 
 /* ======= PLAYER / CARD ======= */
 .video-box { 
-  background: #a62121;
+  background: #004fa8ad;
   padding: 10px;
   border-radius: 6px;
   max-width: 560px;
@@ -108,18 +108,18 @@ html, body {
   display: block;
   text-decoration: none;
   padding: 10px 14px;
-  background: #222634;           /* flat, dark */
+  background: #93a1d3;           /* flat, dark */
   color: #f0f0f0;
   font-weight: bold;
-  border: 1px solid #2f3545;     /* borda discreta */
+  border: 1px solid #13275e;     /* borda discreta */
   border-radius: 8px;
   transition: background .2s ease, border-color .2s ease, color .2s ease, transform .1s ease;
 }
 
 .nav-vertical ul li a:hover{
-  background: #2a3245;
+  background: #5571b4;
   color: #fff;
-  border-color: #3f9cff;
+  border-color: #136dce;
   transform: translateY(-1px);
 }
 
