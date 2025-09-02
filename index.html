@@ -71,46 +71,93 @@
   <script>
     // Mapa de temas → lista de vídeos
     const TEMAS = {
-      LOUVOR: [
-        { titulo: "EU SOU TEU PAI", 
-         autor: "VALESCA MAYSSA", 
-         url: "https://www.youtube.com/watch?v=kNJPalON82E" 
+    Nicolas Legal:[ { titulo: "Nicolas Legal brincando com a coleção de brinquedos do Minecraft", 
+         autor: "Nicolas Legal", 
+         url: "https://youtu.be/hA6-oc06Ip4" 
         },
-        { titulo: "DEUS DE PROMESSAS", 
-         autor: "MINISTÉRIO APASCENTAR", 
-         url: "https://youtu.be/93XkdakMp00?si=-S0mta76Kc_GxWhd" 
+        { titulo: "Escape Stitch ROBLOX", 
+         autor: "Nicolas Legal", 
+         url: "https://youtu.be/ZZ9Ol7mvEiU?si=bd8hnmRGPbR1gKBy" 
         },
-        { titulo: "NINGUÉM EXPLICA DEUS", 
-         autor: "PRETO NO BRANCO", 
+      
+        { titulo: "Torta na Cara", 
+         autor: "Nicolas Legal", 
          url: "https://youtu.be/LYsaKn8FRhc?si=R7yN3htfuafehfSw" 
+
+        },
+        { titulo: "Como Dói", 
+         autor: "Nicolas Legal", 
+         url: "https://youtu.be/0nfbE1HfABQ?si=MLXLo-xfk-YjqgiA" 
+
+        },
+        { titulo: "Conheça os Pokémonsters", 
+         autor: "Nicolas Legal", 
+         url: "https://youtu.be/n-1_HbcYneg?si=82AgGinDNcrXwUxW" 
+
+        },]
+      Nicolas Netto: [
+        { titulo: "MÚSICA EM DIVERSÃO", 
+         autor: " Nicolas Netto", 
+         url: "https://youtu.be/OpQxZcxPqkw?si=Wm8fgC7mmkFe1FdS" 
+        },
+        { titulo: "EXPLOSÃO DE ALEGRIA ", 
+         autor: " Nicolas Netto", 
+         url: "https://youtu.be/XBIVQf-OYOQ?si=dDw4bI5PbflZ1x3H" 
+        },
+         { titulo: "ENERGIA DA AMIZADE ", 
+         autor: " Nicolas Netto", 
+         url: "https://youtu.be/zotOtSGyjTw?si=4sgH_uP4ULH3qUIM" 
+        },
+         { titulo: "CROCODILO ", 
+         autor: " Nicolas Netto", 
+         url: "https://youtu.be/INk_kbjzBWc?si=rVjsq3eVwaFUI6hu" 
+        },
+         { titulo: "MENINA LINDA ", 
+         autor: " Nicolas Netto", 
+         url: "https://youtu.be/qdaUioTo96s?si=jPAbm--AL5bXOd-v" 
         },
       ],
-      MENSAGENS: [
-        { titulo: "O TEMPO É CURTO; FAÇA O MELHOR USO DO SEU TEMPO", 
-         autor: "BILLY GRAHAM EM PORTUGUÊS", 
-         url: "https://youtu.be/fmsAqGy2pCM?si=u8aCy5Lwjoj80xAB" 
+    Brainrot: [
+        { titulo: "Tung Tung Tung Sahur", 
+         autor: "W&W ", 
+         url: "https://youtu.be/6onc3rpArns?si=lAL3-NjT-dwpymMQ" 
         },
-        { titulo: "QUEM É JESUS CRISTO?", 
-         autor: "BILLY GRAHAM EM PORTUGUÊS", 
-         url: "https://youtu.be/6ATJ6avomUg?si=4_qlxZGejDlxVyz5" 
+        { titulo: "Brainrot Gang ", 
+         autor: "Neow", 
+         url: "https://youtu.be/2D1rExarl4M?si=lWgOXRf23eDwBhRs" 
         },
+        { titulo: "ADIVINHE OS MEMES BRAINROT", 
+         autor: "MacaQuiz", 
+         url: "https://youtu.be/9luEaIsxYBk?si=hhsG19uVLlcUkZi9" 
+        },
+         { titulo: " Brainrot Rap", 
+         autor: "Party Tunes", 
+         url: "https://youtu.be/T_NKi5KHUdI?si=KqGGoRtTU7_tysBd" 
+        },
+         { titulo: "Bailarina Capuchina ", 
+         autor: "Notas de Miel", 
+         url: "https://youtu.be/76_WOw2Lhq0?si=iDDU4OLjjdq1ICup" 
+        },
+      
       ],
-      INFANTIL: [
-        { titulo: "SOY UNA TAZA", 
-         autor: "CANTA JUEGO", 
-         url: "https://youtu.be/cgEnBkmcpuQ?si=paA3pkAIp3lgAmjQ" 
+     Bolofofos: [
+        { titulo: "Ta na hora do papa", 
+         autor: " Bolofofos", 
+         url: "https://youtu.be/kgA_WFHjRQA?si=TzCWi4p0D9AhLZMa" 
         },
-        { titulo: "PEDRO, THIAGO, JOÃO NO BARQUINHO", 
-         autor: "3 PALAVRINHAS", 
-         url: "https://youtu.be/Tdwy3BZe61s?si=As38T49IC695wKE0" 
+          { titulo: "FUNK do Pão de Queijo", 
+         autor: " Bolofofos", 
+         url: "https://youtu.be/1BZ5s6BcvKg?si=oNuEPZMZD6OXC9W1" 
         },
-      ],
-      AULAS: [
-        { titulo: "INTRODUÇÃO A JAVASCRIPT", 
-         autor: "TIGER CODES", 
-         url: "https://youtu.be/WRlfwBof66s?si=0o80ULtCNqjj-lU2" 
+          { titulo: "Dança dos Bolofofos", 
+         autor: " Bolofofos", 
+         url: "https://youtu.be/MxPReMGiP2U?si=_9JD2LGnvTs-F-Fs" 
         },
-        { titulo: "HTML E CSS BÁSICO EM 5 MINUTOS", 
+          { titulo: "BREGATATA", 
+         autor: " Bolofofos", 
+         url: "https://youtu.be/AlQwR-IO-K0?si=P86sd-1TY73i-AaI" 
+        },
+        { titulo: "https://youtu.be/AlQwR-IO-K0?si=P86sd-1TY73i-AaIhttps://youtu.be/AlQwR-IO-K0?si=P86sd-1TY73i-AaI, 
          autor: "TIGER CODES", 
          url: "https://www.youtube.com/watch?v=5Hn58p-hYC0" 
         },
