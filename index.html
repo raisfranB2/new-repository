@@ -10,11 +10,8 @@
     <h1>Batalha dos Nicolas</h1>
   </header>
 
-  <!-- LAYOUT: MENU LATERAL (ESQ) + VÍDEO (DIR) -->
   <div class="layout">
-    <!-- LATERAL ESQUERDA -->
     <aside class="sidebar compacto">
-      <!-- Seletor de tema -->
       <section style="padding:12px 0;">
         <label for="tema" style="color:#BDC3C7; margin-right:8px;">ESCOLHA O TEMA:</label>
         <select id="tema">
@@ -25,12 +22,10 @@
         </select>
       </section>
 
-      <!-- Menu dinâmico gerado via JS -->
       <nav class="nav-vertical" aria-label="Lista de vídeos do tema">
-        <ul id="menu-temas"><!-- Itens gerados via JS --></ul>
+        <ul id="menu-temas"></ul>
       </nav>
 
-      <!-- Menu fixo adicional -->
       <br>
       <h1 style="font-size:15px; color:#f0f0f0; margin:16px 0; text-align:left;">
   VÍDEOS EXTERNOS DO YOUTUBE👇
@@ -46,7 +41,6 @@
       </nav>
     </aside>
 
-    <!-- PLAYER À DIREITA -->
     <main class="player">
       <div class="video-box">
         <iframe
@@ -67,10 +61,10 @@
     </main>
   </div>
 
-  <!-- JavaScript -->
   <script>
     // Mapa de temas → lista de vídeos
     const TEMAS = {
+    // CORREÇÃO 1: Adicionada vírgula após o array Nicolas_Legal para evitar erro de sintaxe.
     Nicolas_Legal:[ { titulo: "Nicolas Legal brincando com a coleção de brinquedos do Minecraft", 
          autor: "Nicolas Legal", 
          url: "https://youtu.be/hA6-oc06Ip4" 
@@ -94,7 +88,7 @@
          autor: "Nicolas Legal", 
          url: "https://youtu.be/n-1_HbcYneg?si=82AgGinDNcrXwUxW" 
 
-        },]
+        },], // <<< VÍRGULA ADICIONADA AQUI
       Nicolas_Netto: [
         { titulo: "MÚSICA EM DIVERSÃO", 
          autor: " Nicolas Netto", 
@@ -157,7 +151,8 @@
          autor: " Bolofofos", 
          url: "https://youtu.be/AlQwR-IO-K0?si=P86sd-1TY73i-AaI" 
         },
-        { titulo: "https://youtu.be/AlQwR-IO-K0?si=P86sd-1TY73i-AaIhttps://youtu.be/AlQwR-IO-K0?si=P86sd-1TY73i-AaI, 
+        // CORREÇÃO 2: Título corrigido para evitar poluir o menu, mas o URL original foi mantido.
+        { titulo: "VÍDEO INVÁLIDO CORRIGIDO (TIGER CODES)", 
          autor: "TIGER CODES", 
          url: "https://www.youtube.com/watch?v=5Hn58p-hYC0" 
         },
@@ -171,13 +166,22 @@
     const infoTitulo = document.querySelector(".info h3");
     const infoAutor  = document.querySelector(".info p");
 
-    // Converte URL normal do YouTube para /embed
+    // CORREÇÃO 3: Função toEmbed aprimorada do segundo código para lidar com todos os tipos de URL do YouTube.
     function toEmbed(url) {
       try {
         const u = new URL(url);
-        const id = u.searchParams.get("v");
-        if (id) return `https://www.youtube.com/embed/${id}`;
-        if (u.hostname.includes("youtu.be")) return `https://www.youtube.com/embed/${u.pathname.slice(1)}`;
+        
+        // 1. Links longos (youtube.com/watch?v=ID)
+        const idV = u.searchParams.get("v");
+        if (idV) return `https://www.youtube.com/embed/${idV}`;
+        
+        // 2. Short links (youtu.be/ID)
+        if (u.hostname.includes("youtu.be")) {
+          // Extrai apenas o ID do vídeo (path), ignorando o '?si=...' e outras barras.
+          const pathId = u.pathname.slice(1).split('/')[0];
+          if (pathId) return `https://www.youtube.com/embed/${pathId}`;
+        }
+        
         return url;
       } catch {
         return url;
@@ -186,7 +190,9 @@
 
     // Renderiza o menu com base no tema
     function renderMenu(tema) {
-      const lista = TEMAS[tema] || [];
+      // CORREÇÃO 4: Remove espaços em branco (como no valor " Bolofofos") para buscar a chave correta no objeto TEMAS.
+      const normalizedTema = tema.trim();
+      const lista = TEMAS[normalizedTema] || [];
       menuUl.innerHTML = "";
 
       lista.forEach((video) => {
@@ -219,10 +225,3 @@
   </script>
 </body>
 </html>
-```
-
-
-
-
-
-
